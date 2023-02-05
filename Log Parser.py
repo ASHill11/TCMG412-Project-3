@@ -1,6 +1,14 @@
 # TCMG 412-501, group 0 project 2
 # Server Log Parser
 
+# READ ME
+# The rough structure of the code should be as follows:
+# Welcome message
+# Clear cache prompt
+# Ask for URL input to pull file
+# (File either downloads or errors)
+# Then, the program parses the data and gives what the lab asks for
+
 print('Howdy! Welcome to this server log parser')
 print('This program is designed to work with .txt log files from an Apache web server.')
 
