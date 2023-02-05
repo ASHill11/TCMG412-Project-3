@@ -9,8 +9,11 @@
 # (File either downloads or errors)
 # Then, the program parses the data and gives what the lab asks for
 
-print('Howdy! Welcome to this server log parser')
+
+# Welcome message
+print('Howdy! Welcome to this server log parser.')
 print('This program is designed to work with .txt log files from an Apache web server.')
+print()
 
 # this variable deals with whether a user wants to clear the cache. A response of yes will set it to 1
 # A response of no will set it to 0
@@ -18,10 +21,10 @@ print('This program is designed to work with .txt log files from an Apache web s
 while True:
     clear = input('Do you want to clear the cache? (y/n): ')
     if clear.isalpha():
-        if clear == 'y':
+        if clear == 'y' or 'Y':
             break
             # code to clear the cache
-        elif clear == 'n':
+        elif clear == 'n' or 'N':
             # If cache doesn't need to be cleared, then escape the loop
             break
         else:
