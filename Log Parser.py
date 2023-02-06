@@ -17,6 +17,8 @@ import urllib.request
 # WRITE FUNCTIONS HERE
 def retrieve(url):
     requested = urllib.request.urlopen(url)
+    # Debug line, returns result code, comment out for final release
+    print("Result: " + str(requested.getcode()))
 
 
 # Welcome message
@@ -41,3 +43,4 @@ while True:
         print('Invalid input detected, please try again')
 
 UserUrl = input('Please input source URL: ')
+retrieve(UserUrl)
