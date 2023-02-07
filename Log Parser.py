@@ -15,20 +15,10 @@ import urllib.request
 import os
 # import glob
 
-"""
-# WRITE FUNCTIONS HERE
-def retrieve(url):
-    requested = urllib.request.urlopen(url)
-    # Debug line, returns result code, comment out for final release
-    print("Result: " + str(requested.getcode()))
-
-    Commented out for new code, outside the function its easier to take the data
-"""
-
-
 # Welcome message
 print('Howdy! Welcome to this server log parser.')
 print('This program will cache and parse a provided server log.')
+print('Please ensure that that this program is run in administrator mode')
 print('NOTICE: This may take several minutes')
 
 # Default cache location
@@ -43,36 +33,12 @@ if not os.path.exists(cache):
 # This variable deals with whether a user wants to clear the cache.
 # A while loop will enforce proper input
 
-""""
-OLD CODE: Was used to clear cache
-while True:
-    if skip:
-        break
-    clear = input('Do you want to clear the cache? (y/n): ')
-    if clear == 'y':
-        files = glob.glob(cache)
-        for f in files:
-            os.remove(f)
-        break
-        # code to clear the cache
-    elif clear == 'n':
-        # If cache doesn't need to be cleared, then escape the loop
-        break
-    else:
-        print('Invalid input detected, please try again')
-
-
-# Old code, commented out
-# UserUrl = input('Please input source URL: ')
-# retrieve(UserUrl)
-
-"""
-
 Text_File = urllib.request.urlopen("http://s3.amazonaws.com/tcmg476/http_access_log")
 Log = ""
 
 for i in Text_File:
     Log += (str(i) + '/n')
+
 
 """ 
 please set the file to be a big string 
@@ -87,6 +53,7 @@ lmk if there are any issues
 (432) 631 - 3606 
 -Miles
 """
+
 
 # to separate the file into individual logs as a list
 # then take the first characters off and leave the date at the start
