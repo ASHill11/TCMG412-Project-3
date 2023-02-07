@@ -63,7 +63,7 @@ retrieve(UserUrl)
 
 """ 
 please set the file to be a big string 
-above the tripple quote,
+above the triple quote,
 it should come that way with newline 
 markers where the logs are split
 
