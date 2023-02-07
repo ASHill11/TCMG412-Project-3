@@ -13,7 +13,7 @@
 # IMPORT MODULES HERE
 import urllib.request
 import os
-import glob
+# import glob
 
 """
 # WRITE FUNCTIONS HERE
@@ -26,14 +26,12 @@ def retrieve(url):
 """
 
 
-
 # Welcome message
 print('Howdy! Welcome to this server log parser.')
-print('This program is designed to work with .txt log files from an Apache web server.')
+print('This program will cache and parse a server log.')
 
 # Default cache location
 cache = r'C:\Program Files\Parser'
-skip = False
 # If the cache already exists in the default location it should skip this step
 if not os.path.exists(cache):
     # This will skip cache clearing if triggered
@@ -43,6 +41,9 @@ if not os.path.exists(cache):
 
 # This variable deals with whether a user wants to clear the cache.
 # A while loop will enforce proper input
+
+""""
+OLD CODE: Was used to clear cache
 while True:
     if skip:
         break
@@ -59,11 +60,14 @@ while True:
     else:
         print('Invalid input detected, please try again')
 
-UserUrl = input('Please input source URL: ')
-retrieve(UserUrl)
+
+# Old code, commented out
+# UserUrl = input('Please input source URL: ')
+# retrieve(UserUrl)
+
+"""
 
 Text_File = urllib.request.urlopen("https%3A//s3.amazonaws.com/tcmg476/http_access_log")
-
 Log = ""
 
 for i in Text_File:
