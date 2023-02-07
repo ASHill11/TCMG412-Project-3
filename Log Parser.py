@@ -28,7 +28,8 @@ def retrieve(url):
 
 # Welcome message
 print('Howdy! Welcome to this server log parser.')
-print('This program will cache and parse a server log.')
+print('This program will cache and parse a provided server log.')
+print('NOTICE: This may take several minutes')
 
 # Default cache location
 cache = r'C:\Program Files\Parser'
@@ -67,7 +68,7 @@ while True:
 
 """
 
-Text_File = urllib.request.urlopen("https%3A//s3.amazonaws.com/tcmg476/http_access_log")
+Text_File = urllib.request.urlopen("http://s3.amazonaws.com/tcmg476/http_access_log")
 Log = ""
 
 for i in Text_File:
@@ -86,6 +87,7 @@ lmk if there are any issues
 (432) 631 - 3606 
 -Miles
 """
+
 # to separate the file into individual logs as a list
 # then take the first characters off and leave the date at the start
 Log = Log.split('/n')
@@ -123,7 +125,7 @@ for i in Log:
             count += 1
         elif i[0:3] == 'May':
             count += 1
-        # if not last 6 months dont count
+        # if not last 6 months don't count
         else:
             continue
     else:
