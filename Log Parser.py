@@ -13,6 +13,7 @@
 # IMPORT MODULES HERE
 import urllib.request
 import os
+import glob
 
 
 # WRITE FUNCTIONS HERE
@@ -32,34 +33,10 @@ cache = r'C:\Program Files\Parser'
 skip = False
 # If the cache already exists in the default location it should skip this step
 if not os.path.exists(cache):
-    # Variable for skipping cache clearing if this block is used
-    # Not used in this block
+    # This will skip cache clearing if used
     skip = True
-    # Prompt the user if they want a custom cache, will use preset if not.
-    # Can't currently think of a way to avoid this prompt if the user previously entered a custom cache
-    while True:
-        custom = str(input('Do you wish to set a custom cache location? (Not recommended)(y/n): '))
-        if custom.isalpha():
-            if custom[0] == 'y' or 'Y':
-                location = input('Enter file path of desired directory: ')
-                customlocation = location + 'Parser'
-                # customlocation2 =
-                # DEBUG LINE, comment out for release
-                print(customlocation)
-                try:
-                    os.makedirs(customlocation)
-                except:
-                    print('Error creating cache')
-                else:
-                    print('Success! Cache is named \"Parser\"')
-                    break
-            elif custom[0] == 'n' or 'N':
-                os.makedirs(cache)
-                break
-            else:
-                print('Invalid input detected, please try again')
-        else:
-            print('Invalid input detected, please try again')
+    # Cache is created at the file path set in the cache variable on line 31
+    os.makedirs(cache)
 
 # This variable deals with whether a user wants to clear the cache.
 # A while loop will enforce proper input
@@ -67,10 +44,13 @@ while True:
     if skip:
         break
     clear = input('Do you want to clear the cache? (y/n): ')
-    if clear == 'y' or 'Y':
+    if clear == 'y':
+        files = glob.glob(cache)
+        for f in files:
+            os.remove(f)
         break
         # code to clear the cache
-    elif clear == 'n' or 'N':
+    elif clear == 'n':
         # If cache doesn't need to be cleared, then escape the loop
         break
     else:
