@@ -1,7 +1,7 @@
 # TCMG 412-501, group 0 project 2
 # Server Log Parser
 
-# READ 
+# READ ME
 # The rough structure of the code should be as follows:
 # Welcome message
 # Clear cache prompt
