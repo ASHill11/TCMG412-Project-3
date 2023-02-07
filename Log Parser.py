@@ -12,6 +12,7 @@
 
 # IMPORT MODULES HERE
 import urllib.request
+import os
 
 
 # WRITE FUNCTIONS HERE
@@ -24,7 +25,14 @@ def retrieve(url):
 # Welcome message
 print('Howdy! Welcome to this server log parser.')
 print('This program is designed to work with .txt log files from an Apache web server.')
-print()
+print('Do you wish to set a custom cache location?')
+
+
+# This code should create a new directory for the program if it does not exist
+# This will store any files grabbed by it
+newpath = r'C:\Program Files\Parser'
+if not os.path.exists(newpath):
+    os.makedirs(newpath)
 
 # This variable deals with whether a user wants to clear the cache.
 # A while loop will enforce proper input
