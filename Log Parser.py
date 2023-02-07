@@ -59,3 +59,55 @@ while True:
 
 UserUrl = input('Please input source URL: ')
 retrieve(UserUrl)
+
+
+
+# to seperate the file into individual logs as a list
+# then take the first charachters off and leave the date at the start
+# -Miles
+Log = Log.split(/n)
+count = 0
+for i in Log:
+    spot = 0
+    for j in i:
+        if j == '[':
+            break
+        else:
+            spot += 1 
+    i = i[spot+4:]
+    Log[count] = i 
+    count += 1
+   
+
+ 
+Total = count
+
+count = 0 
+
+for i in Log:
+     #print (i[0:3])
+     #print(i[4:8])
+     #right year for last 6 months?
+    if i[4:8] == "1995":
+         #right month?
+        if i[0:3] == 'Oct':
+             count += 1
+        elif i[0:3] == 'Sep':
+             count += 1
+        elif i[0:3] == 'Aug':
+             count += 1 
+        elif i[0:3] == 'Jul':
+             count += 1 
+        elif i[0:3] == 'Jun':
+             count += 1 
+        elif i[0:3] == 'May':
+             count += 1
+        #if not last 6 months dont count 
+        else:
+            continue  
+    else:
+        continue
+     
+print()    
+print(count, "requests have been made in the last 6 months")
+print(Total, "requests are in the Log in total")
