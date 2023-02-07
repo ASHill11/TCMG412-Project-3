@@ -1,4 +1,4 @@
-# TCMG 412-501, group 0 project 2
+# TCMG 412-501, group 0 project 3
 # Server Log Parser
 
 # READ ME
