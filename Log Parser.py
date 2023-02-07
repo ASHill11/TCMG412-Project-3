@@ -59,7 +59,11 @@ lmk if there are any issues
 # then take the first characters off and leave the date at the start
 Log = Log.split('/n')
 count = 0
+save_path = cache
+completeName = os.path.join(cache, "Cache.txt")
+file1 = open(completeName, "w")
 for i in Log:
+    file1.write(i)
     spot = 0
     for j in i:
         if j == '[':
@@ -70,6 +74,7 @@ for i in Log:
     Log[count] = i
     count += 1
 
+file1.close()
 Total = count
 
 count = 0
