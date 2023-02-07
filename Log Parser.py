@@ -90,7 +90,6 @@ for i in Log:
     count += 1
    
 
- 
 Total = count
 
 count = 0 
