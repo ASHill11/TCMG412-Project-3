@@ -75,7 +75,7 @@ lmk if there are any issues
 -Miles
 """
 # to seperate the file into individual logs as a list
-# then take the first charachters off and leave the date at the start
+# then take the first characters off and leave the date at the start
 Log = Log.split(/n)
 count = 0
 for i in Log:
