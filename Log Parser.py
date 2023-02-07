@@ -25,14 +25,33 @@ def retrieve(url):
 # Welcome message
 print('Howdy! Welcome to this server log parser.')
 print('This program is designed to work with .txt log files from an Apache web server.')
-print('Do you wish to set a custom cache location?')
 
 
-# This code should create a new directory for the program if it does not exist
-# This will store any files grabbed by it
-newpath = r'C:\Program Files\Parser'
-if not os.path.exists(newpath):
-    os.makedirs(newpath)
+# Default cache location
+cache = r'C:\Program Files\Parser'
+# If the cache already exists in the default location it should skip this step
+if not os.path.exists(cache):
+    # Prompt the user if they want a custom cache, will use preset if not.
+    # Can't currently think of a way to avoid this prompt if the user previously entered a custom cache
+    while True:
+        custom = input('Do you wish to set a custom cache location? (Not recommended)(y/n): ')
+        if custom.isalpha():
+            if custom == 'y' or 'Y':
+                location = input('Enter file path of desired directory: ')
+                customlocation = location + 'Parser'
+                try:
+                    os.makedirs(customlocation)
+                    print('Success! Cache is named \"Parser\"')
+                except:
+                    print('Error creating cache')
+            elif custom == 'n' or 'N':
+                os.makedirs(cache)
+                break
+            else:
+                print('Invalid input detected, please try again')
+        else:
+            print('Invalid input detected, please try again')
+
 
 # This variable deals with whether a user wants to clear the cache.
 # A while loop will enforce proper input
