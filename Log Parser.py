@@ -61,10 +61,21 @@ UserUrl = input('Please input source URL: ')
 retrieve(UserUrl)
 
 
+""" 
+please set the file to be a big string 
+above the tripple quote,
+it should come that way with newline 
+markers where the logs are split
 
+just name that big string "Log" ( Log = *big string here*)
+and the code below should parse the data 
+and answer the questions in the lab, 
+lmk if there are any issues
+(432) 631 - 3606 
+-Miles
+"""
 # to seperate the file into individual logs as a list
 # then take the first charachters off and leave the date at the start
-# -Miles
 Log = Log.split(/n)
 count = 0
 for i in Log:
