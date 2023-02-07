@@ -15,12 +15,24 @@ import urllib.request
 import os
 import glob
 
-
+"""
 # WRITE FUNCTIONS HERE
 def retrieve(url):
     requested = urllib.request.urlopen(url)
     # Debug line, returns result code, comment out for final release
     print("Result: " + str(requested.getcode()))
+    
+    Commented out for new code, outide the function its easier to take the data
+"""
+
+Text_File = urlib.request.urlopen("https://s3.amazonaws.com/tcmg476/http_access_log")
+
+Log = ""
+
+for i in Text_File:
+    Log += (str(i) + '/n')
+    
+    
 
 
 # Welcome message
